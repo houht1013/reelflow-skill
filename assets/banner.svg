@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Reelflow Skill — AI 生图与平台数据，一句话让 Claude 调用">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0B63F6"/>
+      <stop offset="0.55" stop-color="#5B2BE0"/>
+      <stop offset="1" stop-color="#8B22E8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.15" r="0.75">
+      <stop offset="0" stop-color="#6C4BF0" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#6C4BF0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.06" cy="0.95" r="0.6">
+      <stop offset="0" stop-color="#0B63F6" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#0B63F6" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="round"><rect width="1200" height="340" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="340" fill="#0A0A12"/>
+    <rect width="1200" height="340" fill="url(#glow)"/>
+    <rect width="1200" height="340" fill="url(#glow2)"/>
+
+    <!-- 背景胶片带：斜穿画面，低透明度当纹理 -->
+    <g opacity="0.10" transform="translate(760 -60) rotate(24)">
+      <rect x="0" y="0" width="150" height="520" rx="10" fill="none" stroke="#CFC9FF" stroke-width="2"/>
+      <g fill="#CFC9FF">
+        <rect x="14" y="26" width="26" height="20" rx="4"/><rect x="110" y="26" width="26" height="20" rx="4"/>
+        <rect x="14" y="90" width="26" height="20" rx="4"/><rect x="110" y="90" width="26" height="20" rx="4"/>
+        <rect x="14" y="154" width="26" height="20" rx="4"/><rect x="110" y="154" width="26" height="20" rx="4"/>
+        <rect x="14" y="218" width="26" height="20" rx="4"/><rect x="110" y="218" width="26" height="20" rx="4"/>
+        <rect x="14" y="282" width="26" height="20" rx="4"/><rect x="110" y="282" width="26" height="20" rx="4"/>
+        <rect x="14" y="346" width="26" height="20" rx="4"/><rect x="110" y="346" width="26" height="20" rx="4"/>
+        <rect x="14" y="410" width="26" height="20" rx="4"/><rect x="110" y="410" width="26" height="20" rx="4"/>
+      </g>
+    </g>
+
+    <!-- 品牌标：胶片环 + 播放键 -->
+    <g transform="translate(78 108)">
+      <!-- 环身 -->
+      <path d="M96 20 a52 52 0 1 1 -52 52 a30 30 0 1 0 -30 -30"
+            fill="none" stroke="url(#brand)" stroke-width="24" stroke-linecap="round"/>
+      <!-- 齿孔：白色虚线叠在环身上 -->
+      <path d="M96 20 a52 52 0 1 1 -52 52 a30 30 0 1 0 -30 -30"
+            fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"
+            stroke-dasharray="7 17" opacity="0.92"/>
+      <!-- 播放键 -->
+      <circle cx="96" cy="72" r="27" fill="#0A0A12"/>
+      <circle cx="96" cy="72" r="25" fill="url(#brand)"/>
+      <path d="M89 62 L110 72 L89 82 Z" fill="#FFFFFF"/>
+    </g>
+
+    <!-- 文案 -->
+    <g font-family="'Segoe UI','PingFang SC','Microsoft YaHei','Hiragino Sans GB',system-ui,sans-serif">
+      <text x="260" y="130" fill="#FFFFFF" font-size="62" font-weight="700" letter-spacing="-1">Reelflow Skill</text>
+      <text x="262" y="180" fill="#B9B4E0" font-size="25">AI 生图 · 封面 · 小红书 / 抖音数据 —— 一句话让 Claude 调用</text>
+
+      <!-- 安装命令药丸 -->
+      <g transform="translate(262 212)">
+        <rect x="0" y="0" width="560" height="52" rx="12" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.14"/>
+        <text x="22" y="34" fill="#7CF0C8" font-size="21" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace">$</text>
+        <text x="44" y="34" fill="#E6E3FA" font-size="21" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace">npx skills add houht1013/reelflow-skill</text>
+      </g>
+
+      <g transform="translate(1140 292)">
+        <text x="0" y="0" fill="#C3BDF2" font-size="24" font-weight="600" text-anchor="end" letter-spacing="0.5">reelflowai.app</text>
+        <rect x="-166" y="10" width="166" height="2" rx="1" fill="url(#brand)"/>
+      </g>
+    </g>
+  </g>
+</svg>
