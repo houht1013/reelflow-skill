@@ -16,7 +16,7 @@ export REELFLOW_API_KEY="rf_xxx..."
 验证连通 + 查余额：
 
 ```bash
-curl -sS -H "Authorization: Bearer $REELFLOW_API_KEY" https://reelflowai.app/api/v1/credits
+curl -sS -H "Authorization: Bearer $REELFLOW_API_KEY" https://api.reelflowai.app/v1/credits
 # → {"workspaceId":"…","balance":1017.73,…}
 ```
 

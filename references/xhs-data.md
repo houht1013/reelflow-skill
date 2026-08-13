@@ -1,6 +1,6 @@
 # 小红书数据 API（36 端点 · 2 积分/次）
 
-Base：`https://reelflowai.app/api/v1`，全部 `Authorization: Bearer $REELFLOW_API_KEY`。
+Base：`https://api.reelflowai.app/v1`，全部 `Authorization: Bearer $REELFLOW_API_KEY`。
 参数 schema 以 `GET /api/v1/openapi` 为准；下面是高频用法。
 
 ## Web 端（GET，query 传参）
@@ -36,7 +36,7 @@ Base：`https://reelflowai.app/api/v1`，全部 `Authorization: Bearer $REELFLOW
 ```bash
 # 对标研究：搜「手冲咖啡」爆款图文
 curl -sS -H "Authorization: Bearer $REELFLOW_API_KEY" \
-  "https://reelflowai.app/api/v1/xiaohongshu/app_v2/search_notes?keyword=%E6%89%8B%E5%86%B2%E5%92%96%E5%95%A1&page=1&sort=hot&noteType=_2"
+  "https://api.reelflowai.app/v1/xiaohongshu/app_v2/search_notes?keyword=%E6%89%8B%E5%86%B2%E5%92%96%E5%95%A1&page=1&sort=hot&noteType=_2"
 ```
 
 响应外层是 TikHub 信封：`{code, data, …}`，业务数据在 `data` 里。

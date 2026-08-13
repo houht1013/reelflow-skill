@@ -4,11 +4,11 @@
 //   node api.mjs GET  /credits
 //   node api.mjs GET  "/xiaohongshu/app_v2/search_notes?keyword=咖啡&page=1"
 //   node api.mjs POST /reelflow/cover '{"platform":"xhs","subject":"手冲咖啡","title":"3步冲出好咖啡"}'
-// 环境变量: REELFLOW_API_KEY(必填), REELFLOW_BASE(默认 https://reelflowai.app/api/v1)
+// 环境变量: REELFLOW_API_KEY(必填), REELFLOW_BASE(默认 https://api.reelflowai.app/v1)
 
 const [method, path, body] = process.argv.slice(2)
 const key = process.env.REELFLOW_API_KEY
-const base = (process.env.REELFLOW_BASE || 'https://reelflowai.app/api/v1').replace(/\/$/, '')
+const base = (process.env.REELFLOW_BASE || 'https://api.reelflowai.app/v1').replace(/\/$/, '')
 
 if (!key) { console.error('缺少 REELFLOW_API_KEY 环境变量（见 references/getting-started.md）'); process.exit(2) }
 if (!method || !path) { console.error('用法: node api.mjs <GET|POST> <path> [json-body]'); process.exit(2) }
