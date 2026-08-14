@@ -25,7 +25,7 @@ Reelflow 把「AI 生图/封面 + 新媒体平台数据」开放为统一 API。
 | 查小红书数据（搜笔记/热榜/评论/用户/话题/蒲公英博主） | `references/xhs-data.md` |
 | 查抖音 / TikTok / YouTube 数据 | 直接查 `GET /api/v1/openapi`，用法与小红书数据同构 |
 
-**定位参考文件**：以上路径相对于本 SKILL.md 所在目录。若你的 agent 未提供 skill 目录（安装位置随工具而异），先定位：`find ~/.claude .claude -name SKILL.md -path '*reelflow*' 2>/dev/null`。
+**定位参考文件**：以上路径相对于本 SKILL.md 所在目录。若你的 agent 未提供 skill 目录（安装位置随工具而异，如 Claude Code 的 `~/.claude/skills`、Codex 的 `~/.codex/skills`），先定位：`find ~/.claude ~/.codex .claude .codex -name SKILL.md -path '*reelflow*' 2>/dev/null`。
 
 ## 已下线的能力（不要再调）
 
