@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Reelflow Skill — AI 生图与平台数据，一句话让 Claude 调用">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Reelflow Skill — AI 生图与平台数据，一句话让 AI Agent 调用">
   <defs>
     <linearGradient id="brand" x1="0" y1="1" x2="1" y2="0">
       <stop offset="0" stop-color="#0B63F6"/>
@@ -53,7 +53,7 @@
     <!-- 文案 -->
     <g font-family="'Segoe UI','PingFang SC','Microsoft YaHei','Hiragino Sans GB',system-ui,sans-serif">
       <text x="260" y="130" fill="#FFFFFF" font-size="62" font-weight="700" letter-spacing="-1">Reelflow Skill</text>
-      <text x="262" y="180" fill="#B9B4E0" font-size="25">AI 生图 · 封面 · 小红书 / 抖音数据 —— 一句话让 Claude 调用</text>
+      <text x="262" y="180" fill="#B9B4E0" font-size="25">AI 生图 · 封面 · 小红书 / 抖音数据 —— 一句话让 AI Agent 调用</text>
 
       <!-- 安装命令药丸 -->
       <g transform="translate(262 212)">

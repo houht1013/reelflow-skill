@@ -1,18 +1,18 @@
 <p align="center">
-  <a href="https://reelflowai.app"><img src="assets/banner.svg" alt="Reelflow Skill — AI 生图与平台数据，一句话让 Claude 调用" width="100%"></a>
+  <a href="https://reelflowai.app"><img src="assets/banner.svg" alt="Reelflow Skill — AI 生图与平台数据，一句话让 AI Agent 调用" width="100%"></a>
 </p>
 
 <p align="center">
   <a href="https://reelflowai.app"><img src="https://img.shields.io/badge/官网-reelflowai.app-5B2BE0?style=flat-square" alt="官网"></a>
   <a href="https://reelflowai.app/docs/api"><img src="https://img.shields.io/badge/API_文档-251_端点-0B63F6?style=flat-square" alt="API 文档"></a>
-  <img src="https://img.shields.io/badge/Claude_Code_%7C_claude.ai-兼容-8B22E8?style=flat-square" alt="兼容">
+  <img src="https://img.shields.io/badge/Claude_Code_%7C_Codex_%7C_Cursor-兼容-8B22E8?style=flat-square" alt="兼容">
   <img src="https://img.shields.io/badge/依赖-零-16a34a?style=flat-square" alt="零依赖">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-64748b?style=flat-square" alt="MIT"></a>
 </p>
 
 <p align="center">
-  <b>把 <a href="https://reelflowai.app">Reelflow</a> 装成 Claude 的技能</b><br>
-  AI 生图 / 平台封面图 · 小红书、抖音等 <b>14 个平台</b>的公开数据 —— 直接对 Claude 说人话就行
+  <b>把 <a href="https://reelflowai.app">Reelflow</a> 装成你 AI Agent 的技能</b><br>
+  AI 生图 / 平台封面图 · 小红书、抖音等 <b>14 个平台</b>的公开数据 —— 直接对 Agent（Claude Code / Codex / Cursor 等）说人话就行
 </p>
 
 ---
@@ -27,11 +27,11 @@
 
 > **你**：查一下小红书「露营」最近的爆款笔记，挑三条整理成表格
 >
-> **Claude**：*（自己调 API、翻页、去重、排版）* 好了，按点赞排序的前三条在这儿——
+> **Agent**：*（自己调 API、翻页、去重、排版）* 好了，按点赞排序的前三条在这儿——
 
 一句话的事。不用记端点，不用查参数，不用碰鉴权。
 
-<p align="center"><img src="assets/flow.svg" alt="工作流：你说一句话 → Claude 读 SKILL.md → 调 Reelflow API → 图片与数据回到对话" width="100%"></p>
+<p align="center"><img src="assets/flow.svg" alt="工作流：你说一句话 → Agent 读 SKILL.md → 调 Reelflow API → 图片与数据回到对话" width="100%"></p>
 
 ## 能做什么
 
@@ -59,12 +59,17 @@ npx skills add houht1013/reelflow-skill
 <summary>手动安装（或想装到某个项目里）</summary>
 
 ```bash
-# 全局
+# Claude Code（全局）
 git clone https://github.com/houht1013/reelflow-skill.git ~/.claude/skills/reelflow
 
-# 只给当前项目
+# Codex（全局）
+git clone https://github.com/houht1013/reelflow-skill.git ~/.codex/skills/reelflow
+
+# 只给当前项目（按你的 Agent 换目录，如 .claude/skills、.codex/skills）
 git clone https://github.com/houht1013/reelflow-skill.git .claude/skills/reelflow
 ```
+
+> `npx skills add` 会自动检测本机已装的 Agent（Claude Code / Codex / Cursor 等）并询问安装位置。
 
 </details>
 
@@ -86,47 +91,55 @@ export REELFLOW_API_KEY="rf_your_api_key"
 先查一下我的 reelflow 积分余额
 ```
 
-Claude 会自己读 `SKILL.md` 判断该不该调、怎么调。
+Agent（Claude Code / Codex / Cursor 等）会自己读 `SKILL.md` 判断该不该调、怎么调。
 
 ## 计费
 
 | 项目 | 价格 |
 |---|---|
 | 平台数据查询 | 2 积分 / 次 |
-| AI 生图 / 封面 | 按模型单价 × 张数，默认 3 积分 / 张 |
+| AI 生图 | 3 积分 / 次 |
 | **失败的请求** | **不扣费** |
 
-积分在 [reelflowai.app](https://reelflowai.app/zh-CN/reelflow/credits) 充值或订阅套餐获得，响应里带确切的 `creditsTotal`。余额不足返回 `402`，Claude 会直接告诉你去充值而不是傻重试。
+积分在 [reelflowai.app](https://reelflowai.app/zh-CN/reelflow/credits) 充值或订阅套餐获得，响应里带确切的 `creditsTotal`。余额不足返回 `402`，Agent 会直接告诉你去充值而不是傻重试。
 
 ## 仓库里有什么
 
 | 文件 | 作用 |
 |---|---|
-| `SKILL.md` | 主入口，Claude 读它决定何时调用 |
+| `SKILL.md` | 主入口，Agent 读它决定何时调用 |
 | `references/getting-started.md` | 配 Key、首次使用、401 排查 |
 | `references/image-cover.md` | 生图与封面：尺寸、模型、批量 |
 | `references/xhs-data.md` | 小红书数据端点用法 |
 | `scripts/api.mjs` | 零依赖调用助手（Node ≥ 18） |
 
-参数细节以 `GET https://reelflowai.app/api/v1/openapi` 为准 —— Skill 只写高频用法，避免文档和实现漂移。
+参数细节以 `GET https://api.reelflowai.app/v1/openapi` 为准 —— Skill 只写高频用法，避免文档和实现漂移。
 
-## 不用 Claude？
+## 更喜欢 MCP？
 
-Skill 是 Claude 系专属（Claude Code / claude.ai）。其他工具走 **MCP**，同源同计费：
+Skill 用开放 Agent Skills 格式，Claude Code / Codex / Cursor 等都能装。你也可以走 **MCP**，同源同计费：
 
 ```bash
-claude mcp add --transport http reelflow https://reelflowai.app/mcp \
+# Claude Code
+claude mcp add --transport http reelflow https://api.reelflowai.app/mcp \
   --header "Authorization: Bearer $REELFLOW_API_KEY"
 ```
 
-Cursor、Codex 等支持 MCP 的客户端同理。也可以直接 `curl` 打 REST API。三种形态任选，见 [接入文档](https://reelflowai.app/docs/api)。
+```toml
+# Codex（~/.codex/config.toml）
+[mcp_servers.reelflow]
+url = "https://api.reelflowai.app/mcp"
+bearer_token_env_var = "REELFLOW_API_KEY"
+```
+
+Cursor 等支持 MCP 的客户端同理。也可以直接 `curl` 打 REST API。三种形态任选，见 [接入文档](https://reelflowai.app/docs/api)。
 
 ## 常见问题
 
 <details>
-<summary>Claude 没有自动调用怎么办？</summary>
+<summary>Agent 没有自动调用怎么办？</summary>
 
-先确认 skill 装对了位置（`~/.claude/skills/reelflow/SKILL.md` 存在），再在话里明确带上「reelflow」这个词。Claude 是按 `SKILL.md` 的 description 匹配的。
+先确认 skill 装对了位置（如 `~/.claude/skills/reelflow/SKILL.md` 或 `~/.codex/skills/reelflow/SKILL.md` 存在），再在话里明确带上「reelflow」这个词。Agent 是按 `SKILL.md` 的 description 匹配的。
 
 </details>
 
