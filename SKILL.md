@@ -1,6 +1,6 @@
 ---
 name: reelflow
-description: 用 Reelflow 开放 API（reelflowai.app）做 AI 生图与平台封面图，以及查小红书/抖音等平台数据（搜索/笔记/评论/用户/热榜/蒲公英）。当用户要 生成图片/做封面图/查小红书或抖音数据、或提到 Reelflow API 时使用。需要 REELFLOW_API_KEY。
+description: 用 Reelflow 开放 API（reelflowai.app）做 AI 生图与平台封面图、图床托管（上传图片换公网直链），以及查小红书/抖音等平台数据（搜索/笔记/评论/用户/热榜/蒲公英）。当用户要 生成图片/做封面图/传图床拿外链/查小红书或抖音数据、或提到 Reelflow API 时使用。需要 REELFLOW_API_KEY。
 ---
 
 # Reelflow — AI 生图与平台数据（Agent 接口）
@@ -14,7 +14,7 @@ Reelflow 把「AI 生图/封面 + 新媒体平台数据」开放为统一 API。
 - **生图一次可出 1–4 张**：同一提示词并行生成，让用户挑。批量里失败的那张不计费。
 - **参数细节以 OpenAPI 为准**：`GET https://api.reelflowai.app/v1/openapi` 有全部端点的参数 schema。本 skill 只写高频用法。
 - `scripts/api.mjs` 是零依赖调用助手（Node ≥ 18）：`node scripts/api.mjs GET /credits`。也可以直接 curl。
-- **也可用 MCP 接入**（Claude Code/Cursor/Codex 原生）：`claude mcp add --transport http reelflow https://api.reelflowai.app/mcp --header "Authorization: Bearer $REELFLOW_API_KEY"`，工具 `list_endpoints`/`call_endpoint`/`generate_image`。本 skill 与 MCP 同源同计费，任选其一。
+- **也可用 MCP 接入**（Claude Code/Cursor/Codex 原生）：`claude mcp add --transport http reelflow https://api.reelflowai.app/mcp --header "Authorization: Bearer $REELFLOW_API_KEY"`，工具 `list_endpoints`/`call_endpoint`/`generate_image`/`host_image`。本 skill 与 MCP 同源同计费，任选其一。
 
 ## 按任务读参考
 
@@ -22,6 +22,7 @@ Reelflow 把「AI 生图/封面 + 新媒体平台数据」开放为统一 API。
 |---|---|
 | 配置 API key / 首次使用 / 401 排查 | `references/getting-started.md` |
 | 生图 / 做封面（3:4 竖版、9:16 短视频、2.35:1 横版等） | `references/image-cover.md` |
+| 图床：上传本地/生成的图片，换可外链的公网直链 | `references/image-host.md` |
 | 查小红书数据（搜笔记/热榜/评论/用户/话题/蒲公英博主） | `references/xhs-data.md` |
 | 查抖音 / TikTok / YouTube 数据 | 直接查 `GET /api/v1/openapi`，用法与小红书数据同构 |
 
